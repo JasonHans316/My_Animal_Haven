@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.animalhaven.hansportable.myanimalhaven.ViewAllAreas"
+    android:onClick="startUpdateProcess">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Living Areas"
+        android:id="@+id/displayLivingAreasHeading"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myLivingAreaList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/displayLivingAreasHeading"
+        android:layout_above="@+id/toHomeFromViewAll"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:longClickable="true"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignRight="@+id/openDeleteActivity"
+        android:layout_alignEnd="@+id/openDeleteActivity"
+        android:focusableInTouchMode="true"
+        tools:listitem="@android:layout/simple_selectable_list_item"
+        android:drawSelectorOnTop="true"
+        android:listSelector="#61372d2d" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Area"
+        android:id="@+id/toHomeFromViewAll"
+        android:onClick="backToHome"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Area"
+        android:id="@+id/openUpdateActivity"
+        android:layout_below="@+id/myLivingAreaList"
+        android:layout_alignRight="@+id/displayLivingAreasHeading"
+        android:layout_alignEnd="@+id/displayLivingAreasHeading"
+        android:layout_toRightOf="@+id/toHomeFromViewAll"
+        android:layout_toEndOf="@+id/toHomeFromViewAll"
+        android:nestedScrollingEnabled="false"
+        android:onClick="startUpdateProcess" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Area"
+        android:id="@+id/openDeleteActivity"
+        android:layout_below="@+id/myLivingAreaList"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="beginDeleteProcess" />
+</RelativeLayout>
